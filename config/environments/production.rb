@@ -92,11 +92,11 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.actiom_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :stmp
-  host = 'https://intense-springs-73192.herokuapp.com/'
-  config.action_mailer.default_url_options = { host: host}
-  ActionMailer::Base.stmp_settings = {
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'https://intense-springs-73192.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
     :address        => 'smtp.sendgrid.net',
     :port           => '587',
     :authentication => :plain,
